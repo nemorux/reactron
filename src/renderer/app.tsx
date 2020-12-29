@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import {Provider} from 'react-redux';
-import makeStore from "src/store";
-import Main from 'src/pages';
-import 'src/core/styles/global.scss';
+import makeStore from "src/shared/store";
+import Main from 'src/renderer/pages';
+import 'src/renderer/core/styles/global.scss';
 
 const store = makeStore(false);
 

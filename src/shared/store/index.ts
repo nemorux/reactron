@@ -8,7 +8,7 @@ import {
   replayActionRenderer,
   getInitialStateRenderer
 } from 'electron-redux';
-import contactsReducer from 'src/store/contacts/reducer';
+import contactsReducer from 'src/shared/store/contacts/reducer';
 
 const rootReducer = combineReducers({
   contacts: contactsReducer

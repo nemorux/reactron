@@ -10,7 +10,7 @@
     ],
     "typeRoots": [
       "node_modules/@types",
-      "src/core/types"
+      "src/shared/types"
     ],
     "allowJs": true,
     "jsx": "react",

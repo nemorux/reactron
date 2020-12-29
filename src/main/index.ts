@@ -2,7 +2,7 @@ import {app, BrowserWindow, screen, Tray, Menu, nativeImage, globalShortcut} fro
 import installExtension, {REDUX_DEVTOOLS, REACT_DEVELOPER_TOOLS} from 'electron-devtools-installer';
 import * as path from "path";
 import * as url from "url";
-import makeStore from "src/store";
+import makeStore from "src/shared/store";
 
 makeStore(true);
 
@@ -18,7 +18,7 @@ function createWindow() {
     width: 800,
     height,
     resizable: false,
-    icon: nativeImage.createFromPath('src/assets/icon256.png'),
+    icon: nativeImage.createFromPath('src/main/assets/icon256.png'),
     skipTaskbar: true,
     // transparent: true,
     frame: false,
@@ -94,7 +94,7 @@ app.on("ready", () => {
   }
 
 
-  tray = new Tray((nativeImage.createFromPath('src/assets/icon256.png')));
+  tray = new Tray((nativeImage.createFromPath('src/main/assets/icon256.png')));
   const contextMenu = Menu.buildFromTemplate([
     {
       label: 'Show', click: () => {
