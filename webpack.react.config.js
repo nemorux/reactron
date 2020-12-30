@@ -22,13 +22,25 @@ module.exports = {
       },
       {
         test: /\.s(a|c)ss$/,
-        use: [
-          'style-loader',
+        oneOf: [
           {
-            loader: 'css-loader',
-            options: {modules: {localIdentName: '[local]-[hash:base64:5]'}}
+            test: /\.module\.s(a|c)ss$/,
+            use: [
+              'style-loader',
+              {
+                loader: 'css-loader',
+                options: {modules: {localIdentName: '[local]-[hash:base64:5]'}}
+              },
+              'sass-loader'
+            ]
           },
-          'sass-loader'
+          {
+            use: [
+              'style-loader',
+              'css-loader',
+              'sass-loader'
+            ]
+          }
         ]
       },
       {
@@ -38,6 +50,7 @@ module.exports = {
             loader: 'file-loader',
             options: {
               outputPath: 'images',
+              // publicPath: '.',
               name(/*resourcePath, resourceQuery*/) {
                 // `resourcePath` - `/absolute/path/to/file.js`
                 // `resourceQuery` - `?foo=bar`

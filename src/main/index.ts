@@ -6,8 +6,8 @@ import makeStore from "src/shared/store";
 
 makeStore(true);
 
+const iconPath = 'src/shared/assets/icon256.png';
 let appIsQuitting = false;
-
 let mainWindow: Electron.BrowserWindow | null;
 
 function createWindow() {
@@ -15,10 +15,10 @@ function createWindow() {
   mainWindow = new BrowserWindow({
     x: 0,
     y: 0,
-    width: 800,
+    width: 0,
     height,
     resizable: false,
-    icon: nativeImage.createFromPath('src/main/assets/icon256.png'),
+    icon: nativeImage.createFromPath(iconPath),
     skipTaskbar: true,
     // transparent: true,
     frame: false,
@@ -94,7 +94,7 @@ app.on("ready", () => {
   }
 
 
-  tray = new Tray((nativeImage.createFromPath('src/main/assets/icon256.png')));
+  tray = new Tray((nativeImage.createFromPath(iconPath)));
   const contextMenu = Menu.buildFromTemplate([
     {
       label: 'Show', click: () => {

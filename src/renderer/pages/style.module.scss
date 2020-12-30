@@ -1,6 +1,42 @@
+@import '../core/styles/vars';
+//@import 'src/renderer/core/styles/global';
 
-.common {
-  font-family: -apple-system, BlinkMacSystemFont,
-  'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
-  'Open Sans', 'Helvetica Neue', sans-serif;
+.container {
+  min-width: $container_width;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+.topSticky {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background-color: white;
+}
+
+.topDiv {
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  justify-content: flex-end;
+  //position: sticky;
+  //top: 0;
+  //left: 0;
+  //z-index: 100;
+}
+
+.logo {
+  height: 2rem;
+  margin-right: auto;
+}
+
+.bottomDiv {
+  //background-color: aqua;
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-self: end;
 }
