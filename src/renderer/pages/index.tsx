@@ -51,6 +51,8 @@ const Cmp = () => {
   }, [topDivExpanded]);
 
   const onAddNewWidget = useCallback(widgetId => {
+    if (widgetId === 'quick')
+      ipcRenderer.send('open-quick-contacts-window');
     setWidgetsIds([...widgetsIds, widgetId]);
   }, [widgetsIds]);
 

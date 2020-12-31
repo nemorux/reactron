@@ -5,15 +5,12 @@ import {Col, Image, Row} from "react-bootstrap";
 import Contact from "src/shared/types/Contact";
 import {useSelector} from "react-redux";
 import {getQuickContacts} from 'src/shared/store/quickContacts/selectors'
-import {ipcRenderer} from 'electron';
 
 function getContact(num: number): Contact | undefined {
   return contacts.find(el => el.num === num);
 }
 
 const Cmp = () => {
-  useEffect(() => ipcRenderer.send('open-quick-contacts-window'), []);
-
   const quickContacts = useSelector(getQuickContacts);
   return (<Row className='py-2'>
     {quickContacts.map((el, idx) => {
