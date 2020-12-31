@@ -6,19 +6,19 @@ import {widgetTypesEntities} from 'src/renderer/cmp/Widgets/exporter'
 const Cmp = ({isEditMode, onRemove, widgetId, ...props}) => {
   const widget: WidgetType = widgetTypesEntities[widgetId];
   const WidgetComponent = widget.component;
-  // const IconComponent = widget.icon?;
+  const IconComponent = widget.icon;
 
   const onCloseClick = useCallback(() => onRemove(widgetId), [onRemove]);
 
   return (
-    <Card className={props.className}>
-      <Card.Header className='d-flex align-items-center'>
-        {/*<IconComponent/>*/}
+    <Card className={props.className + ' shadow-sm'}>
+      <Card.Header className='d-flex align-items-center bg-white py-2'>
+        {IconComponent && <IconComponent/>}
         {widget.title.toUpperCase()}
         {(widget.actions && !isEditMode) &&
         <div className='ml-auto d-inline'>
           {widget.actions.map((el, idx) => (
-              <Button key={idx} className='border-secondary' variant='light' size='sm'>
+              <Button key={idx} className='shadow-sm  text-primary' variant='light' size='sm'>
                 {el}
               </Button>
             )

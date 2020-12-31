@@ -31,7 +31,11 @@ const Cmp = () => {
               {t.calendar()}
             </small>
           </Col>
-          <Col xs={2}><Button className='rounded-circle' variant="light"><IoCall/></Button></Col>
+          <Col xs={2}>
+            <Button size='sm' className='shadow-sm text-primary' variant="light">
+              <IoCall/>
+            </Button>
+          </Col>
         </Row>
       </React.Fragment>
     })

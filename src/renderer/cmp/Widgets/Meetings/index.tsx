@@ -14,10 +14,17 @@ const Cmp = () => {
           <div className='d-flex flex-column'>
             <span className='text-truncate'>{el.caption}</span>
             <small className='text-black-50'>
-              <FiClock className='mr-2'/>{dayjs(el.from).format('h:m A') + ' - ' + dayjs(el.to).format('h:m A')}
+              <FiClock className='mr-2'/>
+              {dayjs(el.from).format('h:m A') + ' - ' + dayjs(el.to).format('h:m A')}
             </small>
           </div>
-          <Button size='sm' className='ml-auto'>Join</Button>
+          {!!idx ?
+            <Button size='sm' variant='light' className='shadow-sm ml-auto text-primary'>Join</Button> :
+            <>
+              <Button size='sm' variant='light' className='shadow-sm ml-auto text-danger'>Reject</Button>
+              <Button size='sm' variant='light' className='shadow-sm ml-2 text-success'>Accept</Button>
+            </>
+          }
         </div>
       </React.Fragment>
     })

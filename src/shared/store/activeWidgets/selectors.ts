@@ -1,0 +1,1 @@
+export const getActiveWidgets = (state: any): string[] => state.quickContacts;

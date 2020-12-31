@@ -1,6 +1,16 @@
 @import '../core/styles/vars';
 //@import 'src/renderer/core/styles/global';
 
+.whole {
+  max-width: 2*$container_width;
+  min-width: $container_width;
+  height: 100vh;
+  width: auto;
+  overflow-x: hidden;
+  //justify-content: start;
+  display: flex;
+}
+
 .container {
   min-width: $container_width;
   height: 100vh;

@@ -31,7 +31,11 @@ const Cmp = () => {
               {el.text}
             </span>
           </Col>
-          <Col xs={2}><Button className='rounded-circle' variant="light"><IoArrowRedo/></Button></Col>
+          <Col xs={2}>
+            <Button size='sm' className='shadow-sm text-primary' variant="light">
+              <IoArrowRedo/>
+            </Button>
+          </Col>
         </Row>
       </React.Fragment>
     })

@@ -1,0 +1,1 @@
+export const getQuickContacts = (state: any) => state.quickContacts;

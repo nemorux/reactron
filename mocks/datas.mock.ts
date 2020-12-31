@@ -7,7 +7,7 @@ import tolkienImg from "./assets/tolkien.jpeg";
 import orwellImg from './assets/orwell.jpg';
 import mansonImg from './assets/manson.png';
 import franklImg from './assets/frankl.png';
-import dicaprioImg from './assets/dicaprio.jpeg';
+import hafezImg from './assets/hafez.jpg';
 import russellImg from './assets/russell.jpeg';
 import baleImg from './assets/bale.jpeg';
 import nolanImg from './assets/nolan.jpeg';
@@ -43,10 +43,10 @@ const contacts: Contact[] = [
   },
   {
     num: 989214207350,
-    firstname: 'Leonardo',
-    lastname: 'Dicaprio',
-    photo: dicaprioImg,
-    title: 'Actor'
+    firstname: 'Hafez',
+    lastname: 'Shirazi',
+    photo: hafezImg,
+    title: 'Poet'
   },
   {
     num: 989128657415,
@@ -108,7 +108,7 @@ const messages: Message[] = [
   {
     id: 2,
     num: 989214207350,
-    text: 'School, I never truly got the knack of. I could never focus on things I didn\'t want to learn.',
+    text: 'Fear is the cheapest room in the house.',
     date: new Date()
   },
   {
@@ -152,4 +152,4 @@ const meetings: Meeting[] = [
   }
 ]
 
-export {contacts, messages, calls, meetings};
+export { contacts, messages, calls, meetings };

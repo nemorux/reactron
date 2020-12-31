@@ -44,7 +44,7 @@ module.exports = {
         ]
       },
       {
-        test: /\.(png|jpe?g|gif|ico)$/i,
+        test: /\.(png|jpe?g|gif|ico|svg)$/i,
         use: [
           {
             loader: 'file-loader',
@@ -55,10 +55,10 @@ module.exports = {
                 // `resourcePath` - `/absolute/path/to/file.js`
                 // `resourceQuery` - `?foo=bar`
 
-                if (process.env.NODE_ENV === 'development')
-                  return '[path][name].[ext]';
+                // if (process.env.NODE_ENV === 'development')
+                return '[path][name].[ext]';
 
-                return '[contenthash].[ext]';
+                // return '[contenthash].[ext]';
               },
             }
           },

@@ -1,16 +1,21 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import WidgetType from "src/shared/types/WidgetType";
 import {contacts} from 'mocks/datas.mock';
 import {Col, Image, Row} from "react-bootstrap";
 import Contact from "src/shared/types/Contact";
+import {useSelector} from "react-redux";
+import {getQuickContacts} from 'src/shared/store/quickContacts/selectors'
+import {ipcRenderer} from 'electron';
 
 function getContact(num: number): Contact | undefined {
   return contacts.find(el => el.num === num);
 }
 
 const Cmp = () => {
-  const [quickContacts, setQuickContacts] = useState([989189071349, 989189071359, 989119664589, 989369664500]);
-  return (<Row className=' py-2'>
+  useEffect(() => ipcRenderer.send('open-quick-contacts-window'), []);
+
+  const quickContacts = useSelector(getQuickContacts);
+  return (<Row className='py-2'>
     {quickContacts.map((el, idx) => {
       const contact = getContact(el);
       return <React.Fragment key={idx}>

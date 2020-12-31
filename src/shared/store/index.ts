@@ -9,9 +9,13 @@ import {
   getInitialStateRenderer
 } from 'electron-redux';
 import contactsReducer from 'src/shared/store/contacts/reducer';
+import quickReducer from 'src/shared/store/quickContacts/reducer';
+import activeWidgetsReducer from 'src/shared/store/activeWidgets/reducer';
 
 const rootReducer = combineReducers({
-  contacts: contactsReducer
+  contacts: contactsReducer,
+  quickContacts: quickReducer,
+  activeWidgets: activeWidgetsReducer
 });
 
 const middlewares = [thunk];
